@@ -40,22 +40,22 @@ class Armor():
 		}
 		return self.effect = effect
 
-	def increaseStrength(self, val: int):
+	def increaseStrength(self, val: int)-> int:
 		"""耐久力を増やす"""
-		self.strength += val
+		return self.strength += val
 
-	def decreaseStrength(self, val: int):
+	def decreaseStrength(self, val: int)-> int:
 		"""使用などで耐久力を減らす"""
 		if (num := self.strength - val) > 0:
-			self.strength = num
+			return self.strength = num
 		else:
 			raise LostError("耐久力が足りません")
 
-	def changeName(self, name: str):
+	def changeName(self, name: str)-> str:
 		"""ユーザー独自の名前を変更する"""
-		self.rename = name
+		return self.rename = name
 
-	def status(self):
+	def status(self)-> str:
 		"""武器の情報"""
 		txt = f"""    ╭════ [ Status ] ══════
 	╠ name : {self.jp_name}
