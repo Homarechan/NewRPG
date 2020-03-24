@@ -1,0 +1,4 @@
+from RpgError import LostError
+
+
+
