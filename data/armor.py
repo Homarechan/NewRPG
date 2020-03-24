@@ -32,28 +32,28 @@ class Armor():
 		"""防具による防御力計算"""
 		return self.defense / 100 * self.effect["increase_defense"]
 
-	def enchant(self, damage: int, anti: int)-> dict:
+	def enchant(self, damage: int, anti: int):
 		"""エンチャントして防具を強く"""
 		effect = {
-			"increase_defense": self.effect["increase_defense"]+=damage,
-			"anti_attack": self.effect["anti_attack"]+=anti
+			"increase_defense": self.effect["increase_defense"] + damage,
+			"anti_attack": self.effect["anti_attack"] + anti
 		}
-		return self.effect = effect
+		self.effect = effect
 
-	def increaseStrength(self, val: int)-> int:
+	def increaseStrength(self, val: int):
 		"""耐久力を増やす"""
-		return self.strength += val
+		self.strength += val
 
-	def decreaseStrength(self, val: int)-> int:
+	def decreaseStrength(self, val: int):
 		"""使用などで耐久力を減らす"""
 		if (num := self.strength - val) > 0:
-			return self.strength = num
+			self.strength = num
 		else:
 			raise LostError("耐久力が足りません")
 
-	def changeName(self, name: str)-> str:
+	def changeName(self, name: str):
 		"""ユーザー独自の名前を変更する"""
-		return self.rename = name
+		self.rename = name
 
 	def status(self)-> str:
 		"""武器の情報"""
