@@ -23,7 +23,7 @@ class Weapon():
 		#耐久力 0になると使用不可になる
 		self.strength = strength
 		#エフェクト
-		if (effect.get("increase_damage")) and (effect.get("anti_defense")):
+		if (effect.get("increase_damage", False)) and (effect.get("anti_defense", False)):
 			self.effect = effect
 		else:
 			self.effect = {

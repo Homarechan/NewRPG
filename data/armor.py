@@ -20,7 +20,7 @@ class Armor():
 		#耐久力 0になると使用不可になる
 		self.strength = strength
 		#エフェクト
-		if effect.get("increase_defense") and effect.get("anti_attack"):
+		if effect.get("increase_defense", False) and effect.get("anti_attack", False):
 			self.effect = effect
 		else:
 			self.effect = {
@@ -32,10 +32,10 @@ class Armor():
 		"""防具による防御力計算"""
 		return self.defense / 100 * self.effect["increase_defense"]
 
-	def enchant(self, damage: int, anti: int):
+	def enchant(self, defense: int, anti: int):
 		"""エンチャントして防具を強く"""
 		effect = {
-			"increase_defense": self.effect.get("increase_defense", 0) + damage,
+			"increase_defense": self.effect.get("increase_defense", 0) + defense,
 			"anti_attack": self.effect.get("anti_attack", 0) + anti
 		}
 		self.effect = effect
