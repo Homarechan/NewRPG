@@ -39,8 +39,8 @@ class Weapon():
 	def enchant(self, damage: int, anti: int):
 		"""エンチャントして武器を強く"""
 		effect = {
-			"increase_damage": self.effect["increase_damage"] + damage,
-			"anti_defense": self.effect["anti_defense"] + anti
+			"increase_damage": self.effect.get("increase_damage", 0) + damage,
+			"anti_defense": self.effect.get("anti_defense", 0) + anti
 		}
 		self.effect = effect
 
