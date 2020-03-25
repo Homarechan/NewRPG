@@ -7,7 +7,7 @@ class Item():
                  sold: int,  # 売った時の価格
                  description: str,  # 説明
                  types="",  # アイテム属性,
-                 canBuy: bool,# 買えるかどうか
+                 canBuy: bool,  # 買えるかどうか
                  rename=None  # ユーザー独自の名前
                  ):
         self.typeslist = [
@@ -20,3 +20,8 @@ class Item():
             self.itemTypes = types
         else:
             raise UnknownTypeError("Doesn't match any item types")
+        self.name = name
+        self.prose = prise if canBuy else None
+        self.sold = sold
+        self.description = description
+        self.rename = rename if rename != None else name
