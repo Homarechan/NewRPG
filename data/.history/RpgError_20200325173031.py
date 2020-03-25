@@ -6,4 +6,3 @@ class UnknownTypeError(Exception):
     """タイプ違うわぼけ!"""
     pass
 
-

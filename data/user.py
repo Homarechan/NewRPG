@@ -4,5 +4,5 @@ class Adventurer(Apprentice):
     def __init__(self, name):
         self.userName = name
         self.item = {}
-        self.job = Apprentice().__init__()
+        self.job = Apprentice.__init__()
         

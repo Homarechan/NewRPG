@@ -1,7 +1,6 @@
 from RpgError import LostError, UnknownTypeError
 
 
-
 class Job():
     def __init__(self,
                 jobname: str,

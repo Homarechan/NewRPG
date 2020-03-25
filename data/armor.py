@@ -3,13 +3,13 @@ from RpgError import LostError
 
 class Armor():
     def __init__(self,
-                 jp_name: str,
-                 description: str,
-                 defense: int,
-                 strength: int,
-                 effect: dict,
-                 rename=None,
-                 ):
+                jp_name: str,
+                description: str,
+                defense: int,
+                strength: int,
+                effect: dict,
+                rename=None,
+                ):
         # 名前
         self.jp_name = jp_name
         # ユーザー独自の名前
