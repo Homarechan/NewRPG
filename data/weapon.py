@@ -1,5 +1,6 @@
 from RpgError import LostError
 
+
 class Weapon():
     def __init__(self,
                  jp_name: str,
@@ -9,20 +10,20 @@ class Weapon():
                  ranges: (float, float),
                  effect: dict,
                  rename=None,
-                ):
-        #名前
+                 ):
+        # 名前
         self.jp_name = jp_name
-        #ユーザー独自の名前
-        self.rename = rename if rename != None else jp_name
-        #攻撃力
+        # ユーザー独自の名前
+        self.rename = rename if rename is not None else jp_name
+        # 攻撃力
         self.damage = damage
-        #攻撃範囲
+        # 攻撃範囲
         self.ranges = ranges
-        #説明
+        # 説明
         self.description = description
-        #耐久力 0になると使用不可になる
+        # 耐久力 0になると使用不可になる
         self.strength = strength
-        #エフェクト
+        # エフェクト
         if (effect.get("increase_damage", False)) and (effect.get("anti_defense", False)):
             self.effect = effect
         else:
@@ -50,7 +51,7 @@ class Weapon():
 
     def decreaseStrength(self, val: int):
         """使用などで耐久力を減らす"""
-        if (num := self.strength - val) > 0:
+        if (num: = self.strength - val) > 0:
             self.strength = num
         else:
             raise LostError("耐久力が足りません")
@@ -74,7 +75,6 @@ class Weapon():
         return txt
 
 
-
 class Dagger(Weapon):
     def __init__(self):
         super().__init__("短剣", "短い剣だよ", 30, 50, (1.0, 1.0), {})
@@ -88,4 +88,3 @@ class WooddenSword(Weapon):
 class WooddenRod(Weapon):
     def __init__(self):
         super().__init__("木の棒", "木でできた棒だよ", 10, 30, (1.5, 1.5), {})
-

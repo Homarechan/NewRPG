@@ -24,4 +24,4 @@ class Item():
         self.prose = prise if canBuy else None
         self.sold = sold
         self.description = description
-        self.rename = rename if rename != None else name
+        self.rename = rename if rename is not None else name
