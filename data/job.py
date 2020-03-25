@@ -27,8 +27,6 @@ class Job():
         self.skill = skill
         self.buff = buff
 
-    def 
-
 
 class Knight(Job):
     def __init__(self):
