@@ -13,7 +13,7 @@ class Armor():
         # 名前
         self.jp_name = jp_name
         # ユーザー独自の名前
-        self.rename = rename if rename != None else jp_name
+        self.rename = rename if rename is not None else jp_name
         # 攻撃力
         self.defense = defense
         # 説明
@@ -31,7 +31,8 @@ class Armor():
 
     def getDefense(self):
         """防具による防御力計算"""
-        return self.defense / 100 * self.effect["increase_defense"]
+        if self.strength > 0:
+            return self.defense / 100 * self.effect["increase_defense"]
 
     def enchant(self, defense: int, anti: int):
         """エンチャントして防具を強く"""
@@ -47,8 +48,8 @@ class Armor():
 
     def decreaseStrength(self, val: int):
         """使用などで耐久力を減らす"""
-        if (num: = self.strength - val) > 0:
-            self.strength = num
+        if (self.strength - val) > 0:
+            self.strength = (self.strength - val)
         else:
             raise LostError("耐久力が足りません")
 

@@ -51,8 +51,8 @@ class Weapon():
 
     def decreaseStrength(self, val: int):
         """使用などで耐久力を減らす"""
-        if (num: = self.strength - val) > 0:
-            self.strength = num
+        if (self.strength - val) > 0:
+            self.strength = (self.strength - val)
         else:
             raise LostError("耐久力が足りません")
 
