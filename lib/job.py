@@ -1,4 +1,4 @@
-from RpgError import UnknownTypeError
+from .RpgError import UnknownTypeError
 
 
 class Job:
@@ -8,7 +8,7 @@ class Job:
                  mp: int,
                  defense: int,
                  attack: int,
-                 types="",
+                 types: str,
                  can_attach_weapon: list,
                  skill: dict,
                  buff: dict

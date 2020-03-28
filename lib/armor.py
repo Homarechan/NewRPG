@@ -1,4 +1,4 @@
-from RpgError import LostError
+from .RpgError import LostError
 
 
 class Armor():

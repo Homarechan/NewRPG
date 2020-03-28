@@ -1,5 +1,4 @@
-
-from job import Apprentice
+from .job import Apprentice
 
 
 class Adventurer(Apprentice):
