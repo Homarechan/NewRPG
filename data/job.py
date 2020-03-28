@@ -29,18 +29,24 @@ class Job():
 
 
 class Knight(Job):
-    def __init__(self):
-        super().__init__("騎士", 60, 10, 30, 30, "physical",
-                         ["wood_sword"], {}, {})
+    def __init__(self, jobname="騎士", hp=60, mp=10, defense=30, attack=30,
+                 types="physical", can_attach_weapon=["wood_sword"],
+                 skill={}, buff={}):
+        super().__init__(jobname, hp, mp, defense, attack,
+                         types, can_attach_weapon, skill, buff)
 
 
 class Wizard(Job):
-    def __init__(self):
-        super().__init__("魔法使い", 50, 60, 10, 20, "masic",
-                         ["dagger", "wood_cane"], {}, {})
+    def __init__(self, jobname="魔法使い", hp=50, mp=60, defense=10, attack=20,
+                 types="masic", can_attach_weapon=["dagger", "wood_cane"],
+                 skill={}, buff={}):
+        super().__init__(jobname, hp, mp, defense, attack,
+                         types, can_attach_weapon, skill, buff)
 
 
 class Apprentice(Job):
-    def __init__(self):
-        super().__init__("見習い", 50, 0, 0, 15, "physical",
-                         ["wood_rod"], {}, {})
+    def __init__(self, jobname="見習い", hp=50, mp=0, defense=0, attack=16,
+                 types="physical", can_attach_weapon=["wood_rod"],
+                 skill={}, buff={}):
+        super().__init__(jobname, hp, mp, defense, attack,
+                         types, can_attach_weapon, skill, buff)
