@@ -2,8 +2,7 @@ from RpgError import LostError, UnknownTypeError
 
 
 class Item():
-    def __init__(self,
-                 name: str,  # アイテム名
+    def __init__(name: str,  # アイテム名
                  prise: int,  # 販売される価格
                  sold: int,  # 売った時の価格
                  description: str,  # 説明
