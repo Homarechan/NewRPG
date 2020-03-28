@@ -1,5 +1,6 @@
 from RpgError import LostError
 
+
 class Armor():
     def __init__(self,
                  jp_name: str,
@@ -8,18 +9,18 @@ class Armor():
                  strength: int,
                  effect: dict,
                  rename=None,
-                ):
-        #名前
+                 ):
+        # 名前
         self.jp_name = jp_name
-        #ユーザー独自の名前
-        self.rename = rename if rename != None else jp_name
-        #攻撃力
+        # ユーザー独自の名前
+        self.rename = rename if rename is not None else jp_name
+        # 攻撃力
         self.defense = defense
-        #説明
+        # 説明
         self.description = description
-        #耐久力 0になると使用不可になる
+        # 耐久力 0になると使用不可になる
         self.strength = strength
-        #エフェクト
+        # エフェクト
         if effect.get("increase_defense", False) and effect.get("anti_attack", False):
             self.effect = effect
         else:
@@ -30,7 +31,8 @@ class Armor():
 
     def getDefense(self):
         """防具による防御力計算"""
-        return self.defense / 100 * self.effect["increase_defense"]
+        if self.strength > 0:
+            return self.defense / 100 * self.effect["increase_defense"]
 
     def enchant(self, defense: int, anti: int):
         """エンチャントして防具を強く"""
@@ -46,8 +48,8 @@ class Armor():
 
     def decreaseStrength(self, val: int):
         """使用などで耐久力を減らす"""
-        if (num := self.strength - val) > 0:
-            self.strength = num
+        if (self.strength - val) > 0:
+            self.strength = (self.strength - val)
         else:
             raise LostError("耐久力が足りません")
 
@@ -55,7 +57,7 @@ class Armor():
         """ユーザー独自の名前を変更する"""
         self.rename = name
 
-    def status(self)-> str:
+    def status(self) -> str:
         """武器の情報"""
         txt = f"""    ╭════ [ Status ] ══════
     ╠ name : {self.jp_name}
@@ -67,6 +69,3 @@ class Armor():
     ╠ anto attack : {self.effect['anti_attack']}
     ╰════ [ status ] ══════"""
         return txt
-
-
-

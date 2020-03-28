@@ -1,7 +1,5 @@
-from RpgError import LostError, UnknownTypeError
-
-
 class Item():
+<<<<<<< HEAD
     def __init__(self,
                  name: str,  # アイテム名
                  prise: int,  # 販売される価格
@@ -21,8 +19,31 @@ class Item():
             self.itemTypes = types
         else:
             raise UnknownTypeError("Doesn't match any item types")
+=======
+    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+>>>>>>> 8dac46c14b71ecfad25c86ef7b7e2b37b4dadce8
         self.name = name
-        self.prose = prise if canBuy else None
+        self.prise = prise if canBuy else None
         self.sold = sold
         self.description = description
-        self.rename = rename if rename != None else name
+        self.rename = rename if rename is not None else name
+
+
+class QuestItem(Item):
+    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)
+
+
+class RecoveryItem(Item):
+    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)
+
+
+class ChangeItem(Item):
+    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)
+
+
+class MaterialItem(Item):
+    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)
