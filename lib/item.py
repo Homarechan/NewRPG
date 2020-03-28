@@ -1,5 +1,7 @@
-class Item():
-<<<<<<< HEAD
+from RpgError import UnknownTypeError
+
+
+class Item:
     def __init__(self,
                  name: str,  # アイテム名
                  prise: int,  # 販売される価格
@@ -19,9 +21,6 @@ class Item():
             self.itemTypes = types
         else:
             raise UnknownTypeError("Doesn't match any item types")
-=======
-    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
->>>>>>> 8dac46c14b71ecfad25c86ef7b7e2b37b4dadce8
         self.name = name
         self.prise = prise if canBuy else None
         self.sold = sold
@@ -30,20 +29,28 @@ class Item():
 
 
 class QuestItem(Item):
-    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+    """クエストで必要になってくるアイテム(キーアイテム"""
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
         super().__init__(name, prise, sold, description, canBuy, rename)
 
 
 class RecoveryItem(Item):
-    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+    """回復系アイテム"""
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
         super().__init__(name, prise, sold, description, canBuy, rename)
 
 
 class ChangeItem(Item):
-    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+    """変更系に必要なアイテム"""
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
         super().__init__(name, prise, sold, description, canBuy, rename)
 
 
 class MaterialItem(Item):
-    def __init__(self, name: str, prise: int, sold: int, description: str, canBuy: bool, rename=None):
+    """素材系アイテム"""
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
         super().__init__(name, prise, sold, description, canBuy, rename)

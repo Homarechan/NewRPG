@@ -29,7 +29,7 @@ class Armor():
                 "anti_attack": 0
             }
 
-    def getDefense(self):
+    def get_defense(self):
         """防具による防御力計算"""
         if self.strength > 0:
             return self.defense / 100 * self.effect["increase_defense"]
@@ -42,18 +42,18 @@ class Armor():
         }
         self.effect = effect
 
-    def increaseStrength(self, val: int):
+    def increase_strength(self, val: int):
         """耐久力を増やす"""
         self.strength += val
 
-    def decreaseStrength(self, val: int):
+    def decrease_strength(self, val: int):
         """使用などで耐久力を減らす"""
         if (self.strength - val) > 0:
             self.strength = (self.strength - val)
         else:
             raise LostError("耐久力が足りません")
 
-    def changeName(self, name: str):
+    def change_name(self, name: str):
         """ユーザー独自の名前を変更する"""
         self.rename = name
 

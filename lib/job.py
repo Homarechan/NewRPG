@@ -1,7 +1,7 @@
 from RpgError import UnknownTypeError
 
 
-class Job():
+class Job:
     def __init__(self,
                  jobname: str,
                  hp: int,
@@ -9,9 +9,9 @@ class Job():
                  defense: int,
                  attack: int,
                  types="",
-                 can_attach_weapon=[],
-                 skill=[],
-                 buff={}
+                 can_attach_weapon: list,
+                 skill: dict,
+                 buff: dict
                  ):
         jobTypeList = ["physical", "masic"]
         if types in jobTypeList:

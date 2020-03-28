@@ -24,7 +24,8 @@ class Weapon():
         # 耐久力 0になると使用不可になる
         self.strength = strength
         # エフェクト
-        if (effect.get("increase_damage", False)) and (effect.get("anti_defense", False)):
+        if (effect.get("increase_damage", False)) and (
+                effect.get("anti_defense", False)):
             self.effect = effect
         else:
             self.effect = {
@@ -32,7 +33,7 @@ class Weapon():
                 "anti_defense": 0
             }
 
-    def getDamage(self):
+    def get_damage(self):
         """武器が与えるダメージを計算
         なお、 anti_defenseは反映されない"""
         return self.damage / 100 * self.effect["increase_damage"]
@@ -45,18 +46,18 @@ class Weapon():
         }
         self.effect = effect
 
-    def increaseStrength(self, val: int):
+    def increase_strength(self, val: int):
         """耐久力を増やす"""
         self.strength += val
 
-    def decreaseStrength(self, val: int):
+    def decrease_strength(self, val: int):
         """使用などで耐久力を減らす"""
         if (self.strength - val) > 0:
             self.strength = (self.strength - val)
         else:
             raise LostError("耐久力が足りません")
 
-    def changeName(self, name: str):
+    def change_name(self, name: str):
         """ユーザー独自の名前を変更する"""
         self.rename = name
 
