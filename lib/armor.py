@@ -8,7 +8,7 @@ class Armor():
                  defense: int,
                  strength: int,
                  effect: dict,
-                 rename=None,
+                 rename: str=None,
                  ):
         # 名前
         self.jp_name = jp_name
@@ -92,22 +92,22 @@ class Head_armor(Armor):
 #初期衣装
 
 
-class Leather_Head(Head_armor):
+class Poor_Head(Head_armor):
     def __init__(self, jp_name="帽子", description="粗末な帽子", defense=2, strength=10, effect={}, rename=None):
         super().__init__(jp_name, description, defense, strength, effect, rename)
 
 
-class Leather_Body(Body_armor):
+class Poor_Body(Body_armor):
     def __init__(self, jp_name="服", description="粗末な鎧", defense=2, strength=10, effect={}, rename=None):
         super().__init__(jp_name, description, defense, strength, effect, rename)
 
 
-class Leather_Leggings(Leggings_armor):
+class Poor_Leggings(Leggings_armor):
     def __init__(self, jp_name="ズボン", description="粗末なズボン", defense=2, strength=10, effect={}, rename=None):
         super().__init__(jp_name, description, defense, strength, effect, rename)
 
 
-class Leather_Boots(Boots_armor):
+class Poor_Boots(Boots_armor):
     def __init__(self, jp_name="ブーツ", description="粗末なブーツ", defense=2, strength=10, effect={}, rename=None):
         super().__init__(jp_name, description, defense, strength, effect, rename)
 
