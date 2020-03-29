@@ -33,8 +33,6 @@ class Armor():
         """防具による防御力計算"""
         if self.strength > 0:
             return self.defense / 100 * self.effect["increase_defense"]
-        else:
-            raise LostError("耐久値が足りません")
 
     def enchant(self, defense: int, anti: int):
         """エンチャントして防具を強く"""

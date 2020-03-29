@@ -9,7 +9,7 @@ from .armor import (
 
 class Adventurer():
     def __init__(self, name):
-        self.user_name = name
+        self.userName = name
         self.item = {}
         self.job = Apprentice()
         self.armor = {

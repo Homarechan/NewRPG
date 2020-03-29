@@ -20,16 +20,12 @@ class Job:
             raise UnknownTypeError("JobTypes does't match any jobTypes")
         self.job_ame = jobname
         self.job_hp = hp
-        self.job_mp = mp
-        self.job_defense = defense
-        self.job_attack = attack
-        self.job_weapon = can_attach_weapon
+        self.jobMp = mp
+        self.jobDefense = defense
+        self.jobAttack = attack
+        self.jobWeapon = can_attach_weapon
         self.skill = skill
         self.buff = buff
-
-
-
-#TODO こっちもjob.pyのように職業の属性ごとに分ける
 
 
 class Knight(Job):

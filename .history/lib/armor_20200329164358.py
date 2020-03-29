@@ -34,7 +34,7 @@ class Armor():
         if self.strength > 0:
             return self.defense / 100 * self.effect["increase_defense"]
         else:
-            raise LostError("耐久値が足りません")
+            raise LostError("")
 
     def enchant(self, defense: int, anti: int):
         """エンチャントして防具を強く"""

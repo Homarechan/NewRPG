@@ -35,14 +35,20 @@ class QuestItem(Item):
 
 class RecoveryItem(Item):
     """回復系アイテム"""
-    pass
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)
 
 
 class ChangeItem(Item):
     """変更系に必要なアイテム"""
-    pass
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)
 
 
 class MaterialItem(Item):
     """素材系アイテム"""
-    pass
+    def __init__(self, name: str, prise: int, sold: int,
+                 description: str, canBuy: bool, rename=None):
+        super().__init__(name, prise, sold, description, canBuy, rename)

@@ -27,9 +27,7 @@ class Job:
         self.skill = skill
         self.buff = buff
 
-
-
-#TODO こっちもjob.pyのように職業の属性ごとに分ける
+#TODO こっちもjob.pyのように職業覗く性ごとに分ける
 
 
 class Knight(Job):

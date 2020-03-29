@@ -28,10 +28,6 @@ class Job:
         self.buff = buff
 
 
-
-#TODO こっちもjob.pyのように職業の属性ごとに分ける
-
-
 class Knight(Job):
     def __init__(self, jobname="騎士", hp=60, mp=10, defense=30, attack=30,
                  types="physical", can_attach_weapon=["wood_sword"],
