@@ -66,7 +66,7 @@ class Armor():
     ╠ defense : {self.defense}
     ╠ strength : {self.strength}
     ╠ increase defense : {self.effect['increase_defense']}
-    ╠ anti attack : {self.effect['anti_attack']}
+    ╠ anto attack : {self.effect['anti_attack']}
     ╰════ [ status ] ══════"""
         return txt
 
@@ -98,7 +98,7 @@ class Poor_Head(Head_armor):
 
 
 class Poor_Body(Body_armor):
-    def __init__(self, jp_name="服", description="粗末な服", defense=2, strength=10, effect={}, rename=None):
+    def __init__(self, jp_name="服", description="粗末な鎧", defense=2, strength=10, effect={}, rename=None):
         super().__init__(jp_name, description, defense, strength, effect, rename)
 
 
