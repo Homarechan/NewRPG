@@ -57,7 +57,7 @@ class Armor():
         """ユーザー独自の名前を変更する"""
         self.rename = name
 
-    def status(self) -> str:
+    def status(self):
         """武器の情報"""
         txt = f"""    ╭════ [ Status ] ══════
     ╠ name : {self.jp_name}
@@ -69,3 +69,70 @@ class Armor():
     ╠ anto attack : {self.effect['anti_attack']}
     ╰════ [ status ] ══════"""
         return txt
+
+
+#部位ごとにいろいろつけます
+
+class Body_armor(Armor):
+    pass
+
+
+class Leggings_armor(Armor):
+    pass
+
+
+class Boots_armor(Armor):
+    pass
+
+class Head_armor(Armor):
+    pass
+
+
+
+#初期衣装
+
+
+class Leather_Head(Head_armor):
+    def __init__(self, jp_name="帽子", description="粗末な帽子", defense=2, strength=10, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+class Leather_Body(Body_armor):
+    def __init__(self, jp_name="服", description="革でできた鎧", defense=2, strength=10, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+class Leather_Leggings(Leggings_armor):
+    def __init__(self, jp_name="ズボン", description="粗末なズボン", defense=2, strength=10, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+class Leather_Boots(Boots_armor):
+    def __init__(self, jp_name="ブーツ", description="粗末なブーツ", defense=2, strength=10, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+
+#革の鎧
+
+
+class Leather_Head(Head_armor):
+    def __init__(self, jp_name="革の甲", description="革でできた甲", defense=10, strength=20, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+class Leather_Body(Body_armor):
+    def __init__(self, jp_name="革の鎧", description="革でできた鎧", defense=30, strength=50, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+class Leather_Leggings(Leggings_armor):
+    def __init__(self, jp_name="革の足鎧", description="革でできた足の鎧", defense=20, strength=30, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
+class Leather_Boots(Boots_armor):
+    def __init__(self, jp_name="革のブーツ", description="革でできたブーツ", defense=15, strength=20, effect={}, rename=None):
+        super().__init__(jp_name, description, defense, strength, effect, rename)
+
+
