@@ -1,4 +1,4 @@
-from RpgError import UnknownTypeError
+from .RpgError import UnknownTypeError
 
 
 class Item:

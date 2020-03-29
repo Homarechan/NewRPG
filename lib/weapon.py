@@ -1,5 +1,4 @@
-from RpgError import LostError
-
+from .RpgError import LostError
 
 class Weapon():
     def __init__(self,
